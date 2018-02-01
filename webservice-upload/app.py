@@ -13,7 +13,7 @@ class Upload(Resource):
 		if 'file' not in request.files:
 			return {"code":404,"desc":"upload fail"}
 		file = request.files['file']
-		file.save("test.jpg")
+		file.save(file.filename)
 		return {"code":200,"desc":"upload success"}
 
 api.add_resource(Upload,'/upload')
